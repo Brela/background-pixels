@@ -1,0 +1,78 @@
+body {
+    background-color: #e6e6d6;
+    display: flex;
+    gap: 4vw;
+    margin-left: 4vw;
+}
+
+aside {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+}
+
+h1 {
+    font-size: 1em;
+}
+
+h3, #colorPicker {
+    font-size: 1em;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.generateButtonsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.boxes {
+    display: flex;
+    border: 1px solid grey;
+}
+
+.boxes>div {
+    width: 30px;
+    height: 30px;
+    border: .5px solid rgba(128, 128, 128, 0.561);
+    background-color: white;
+}
+
+.addColor {
+    margin-top: 10px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    min-width: 40px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    padding: 0 20px;
+    border: 1px solid grey;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: rgb(237, 237, 237);
+}
+
+.canvas {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    width: 70vw;
+    height: 90vh;
+    overflow: hidden;
+    background-color: rgb(171, 171, 171);
+}
