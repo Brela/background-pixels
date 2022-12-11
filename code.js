@@ -1,5 +1,41 @@
 
 let c = console.log
+let arrOfColors = ['#15F523', '#15F5A8', '#BBF086', '#F0DA86', '#D4C2A4']
+////////////////////////////////// COLOR PICKER API //////////////////////////////////////
+var colorPicker = new iro.ColorPicker("#colorPicker", {
+    width: 150,
+    color: arrOfColors[0],
+    borderWidth: 1,
+    borderColor: "#fff",
+    layout: [
+        {
+            component: iro.ui.Box,
+        },
+        {
+            component: iro.ui.Slider,
+            options: {
+                id: 'hue-slider',
+                sliderType: 'hue'
+            }
+        }
+    ]
+});
+/////////////////////////////////////////////////////////////////////////////////////////
+// when "add to color array" button is clicked, color from the color picker is added to arrOfColors
+//and colorPicker object's color property is updated
+document.querySelector('.addColor')
+    .addEventListener('click', () => {
+        // read data-color attribute
+        let newColor = colorPicker.color.hexString
+        c(newColor)
+        if (newColor) {
+            // update the color picker
+            colorPicker.color.set(newColor);
+            //update arrOfColors
+            arrOfColors.push(newColor)
+            console.log(arrOfColors)
+        }
+    });
 
 class Square {
     constructor(props) {
@@ -23,7 +59,7 @@ class Square {
 }
 
 
-let arrOfColors = ['#15F523', '#15F5A8', '#BBF086', '#F0DA86', '#D4C2A4']
+
 
 
 const colorArray = {
@@ -41,11 +77,7 @@ const colorArray = {
 document.querySelector('.random').addEventListener('click', generateRandomPattern)
 document.querySelector('.ordered').addEventListener('click', generateOrderedPattern)
 
-document.querySelector('.addColor').addEventListener('click', () => {
-    arrOfColors.push(hex)
-    console.log(arrOfColors)
-    c(colorArray.c3)
-})
+
 
 
 
@@ -109,33 +141,12 @@ setTimeout(function () {
 }, delayInMilliseconds);
 
 
-////////////////////////////////// COLOR PICKER!!!
-// Box & hue slider
-var colorPicker = new iro.ColorPicker("#colorPicker", {
-    width: 150,
-    color: arrOfColors[0],
-    borderWidth: 1,
-    borderColor: "#fff",
-    layout: [
-        {
-            component: iro.ui.Box,
-        },
-        {
-            component: iro.ui.Slider,
-            options: {
-                id: 'hue-slider',
-                sliderType: 'hue'
-            }
-        }
-    ]
-});
-// getting the value from the picker
-var hex = colorPicker.color.hexString;
-console.log(hex); // hex = "#ff0000"
+
+// console.log(hex); // hex = "#ff0000"
 
 // listen to a color picker's color:change event // do something on color change
 // color:change callbacks receive the current color
 colorPicker.on('color:change', function (color) {
     // log the current color as a HEX string
-    console.log(color.hexString);
+    // console.log(color.hexString);
 });
