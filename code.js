@@ -20,8 +20,9 @@ var colorPicker = new iro.ColorPicker("#colorPicker", {
         }
     ]
 });
+
 /////////////////////////////////////////////////////////////////////////////////////////
-// when "add to color array" button is clicked, color from the color picker is added to arrOfColors
+// when "add to color array" button is clicked, the color from the color picker is added to arrOfColors
 //and colorPicker object's color property is updated
 document.querySelector('.addColor')
     .addEventListener('click', () => {
@@ -34,6 +35,7 @@ document.querySelector('.addColor')
             //update arrOfColors
             arrOfColors.push(newColor)
             console.log(arrOfColors)
+            updateColorArray()
         }
     });
 
@@ -57,12 +59,8 @@ class Square {
     }
 
 }
-
-
-
-
-
-const colorArray = {
+// this object is for the GUI 'Color Array', which matches each 'arrOfColors' array item
+let colorArray = {
     c1: document.querySelector('.c1').style.backgroundColor = arrOfColors[0],
     c2: document.querySelector('.c2').style.backgroundColor = arrOfColors[1],
     c3: document.querySelector('.c3').style.backgroundColor = arrOfColors[2],
@@ -72,27 +70,48 @@ const colorArray = {
     c7: document.querySelector('.c7').style.backgroundColor = arrOfColors[6],
     c8: document.querySelector('.c8').style.backgroundColor = arrOfColors[7]
 }
+//============================================================================================
+let boxes = document.querySelectorAll('.box')
 
+function updateColorArray(e, box) {
 
+    colorArray = {
+        c1: document.querySelector('.c1').style.backgroundColor = arrOfColors[0] || '#ffffff',
+        c2: document.querySelector('.c2').style.backgroundColor = arrOfColors[1] || '#ffffff',
+        c3: document.querySelector('.c3').style.backgroundColor = arrOfColors[2] || '#ffffff',
+        c4: document.querySelector('.c4').style.backgroundColor = arrOfColors[3] || '#ffffff',
+        c5: document.querySelector('.c5').style.backgroundColor = arrOfColors[4] || '#ffffff',
+        c6: document.querySelector('.c6').style.backgroundColor = arrOfColors[5] || '#ffffff',
+        c7: document.querySelector('.c7').style.backgroundColor = arrOfColors[6] || '#ffffff',
+        c8: document.querySelector('.c8').style.backgroundColor = arrOfColors[7] || '#ffffff'
+    }
+
+}
+
+// removing color from color array when user clicks each box
+let arr = boxes.forEach((box, i) =>
+    box.addEventListener('click',
+        (e) => {
+            console.log(box, i)
+            arrOfColors.splice(i, 1)
+            console.log(arrOfColors)
+            updateColorArray(e, box)
+        }))
+
+//==========================================================================================
 document.querySelector('.random').addEventListener('click', generateRandomPattern)
 document.querySelector('.ordered').addEventListener('click', generateOrderedPattern)
 
 
-
-
-
-let boxes = document.querySelectorAll('.box')
-let arr = boxes.forEach((box, i) =>
-    box.addEventListener('click',
-        () => {
-            console.log(box, i)
-            arrOfColors.splice(i, 1)
-            console.log(arrOfColors)
-        }))
+// squares is an array of every colored square; these colored squares are generated with 
+// the below functions  generateRandomPattern() or generateOrderedPattern() depending on which button
+// is clicked by the user
 
 let squares = []
 
+// generateRandomPattern() is called here to happen on page load
 generateRandomPattern()
+
 function generateRandomPattern() {
     clearCanvas()
     squares = []
@@ -106,31 +125,47 @@ function generateRandomPattern() {
         return arrOfColors[randomNumUpto4]
     }
 }
+
+// Each array item decalres how many times the color from 'arrOfColors will be printed in the orderred pattern
+let timesEachColorPrints = [2, 2, 2, 2, 60, 2, 2, 2]
+// modifying timesEachColorPrints to match the length of the arrOfColors
+timesEachColorPrints = timesEachColorPrints.slice(0, arrOfColors.length)
+// This array position is used to check which color is being printed from 'arrOfColors' and the amount of times it need to be printed from 'timesEachColorPrints
+let arrayPosition = 0
+let printIteration = 1
+
+
 function generateOrderedPattern() {
     clearCanvas()
-    let nextIndex = 0
-    let counter = 0
     squares = []
     for (let i = 0; i < 20000; i++) {
-        const square = new Square({ top: 0, left: 0, size: 10, color: generateOrderedColor(i) })
+        const square = new Square({ top: 0, left: 0, size: 10, color: createColorForPattern() })
         square.addToCanvas()
         squares.push(square)
     }
-    function generateOrderedColor(i) {
-        counter = i
-        if (counter % 6 === 0) return arrOfColors[0]
-        nextIndex = nextIndex + 2
-        nextIndex < arrOfColors.length ? nextIndex = nextIndex : nextIndex = nextIndex - arrOfColors.length;
-        return arrOfColors[nextIndex]
-    }
-}
 
+    function createColorForPattern() {
+        if (printIteration <= timesEachColorPrints[arrayPosition]) {  // if (true) print color again
+            printIteration += 1
+            return arrOfColors[arrayPosition]
+
+        } else {                                                   // else, print next color
+            // increment array position and start from the 1st iteration
+            arrayPosition += 1
+            printIteration = 0
+            if (arrayPosition > arrOfColors.length) arrayPosition = 0
+
+            return arrOfColors[arrayPosition]
+        }
+
+    }
+
+}
 
 function clearCanvas() {
     let canvas = document.querySelector('.canvas')
     canvas.replaceChildren()
 }
-
 
 
 
