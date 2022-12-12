@@ -6,6 +6,7 @@
 ✔️ I'm open to suggestions for improvements :)
 
 ### ToDo:
+* make mobile friendly
 * Figure out how the colored canvas should react upon color change. 
     * Was considering storing each color's iteration number in an array so that when a color is changed, only that color has to be replaced instead of reloading the whole canvas. The problem with that is, what should the program do when someone removes a color from the array and it doesn't know whether the user will add another color to the array or not? 
 * Add pixel shape and size option
