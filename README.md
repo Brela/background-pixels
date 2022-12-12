@@ -11,3 +11,6 @@
 * Add pixel shape and size option
 * make canvas exactly (x) pixels wide and tall so that there is no extra space/ no cutoff pixels on edges
 * Make pixel creation realize the end of canvas and stop. Currently I have 20,000 pixels being created with overflow hidden
+* Add a few cool preset color arrays to choose from
+* Add option to favorite a color array and save it to the user's local storage
+* Add feature to download the canvas as an image. Maybe use http://html2canvas.hertzen.com/features for this? Uses Node.js (which is coming up soon in class 33)

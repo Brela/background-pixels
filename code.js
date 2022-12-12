@@ -1,3 +1,8 @@
+/* //clear preloader on page load
+window.addEventListener('load', function () {
+    document.getElementById('preloader').style.display = 'none'
+}) */
+
 
 let c = console.log
 let arrOfColors = ['#15F523', '#15F5A8', '#BBF086', '#F0DA86', '#D4C2A4']

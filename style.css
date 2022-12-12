@@ -1,5 +1,8 @@
 body {
-    background-color: #d5d5d5;
+    background-color: #e6e6e6;
+}
+
+body>section {
     display: flex;
     gap: 4vw;
     margin-left: 4vw;
@@ -76,3 +79,46 @@ h3, #colorPicker {
     overflow: hidden;
     background-color: rgb(171, 171, 171);
 }
+
+
+
+/* ------------------socials------------- */
+section.socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    width: 50%;
+    height: 40px;
+}
+
+.socials div {
+    width: 15%
+}
+
+.socials div i {
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+
+}
+
+.socials div i:hover {
+    color: rgb(240, 255, 77);
+    font-size: 1.8rem;
+}
+
+/* ------------------ preloader--------------------------- */
+
+/* #preloader {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    width: 70vw;
+    height: 90vh;
+    overflow: hidden;
+    background: white url(Display-Loading.gif) no-repeat left center;
+    background-size: 10%;
+    position: absolute;
+    z-index: 50;
+} */
