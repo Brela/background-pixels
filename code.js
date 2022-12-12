@@ -5,7 +5,8 @@ window.addEventListener('load', function () {
 
 
 let c = console.log
-let arrOfColors = ['#15F523', '#15F5A8', '#BBF086', '#F0DA86', '#D4C2A4']
+
+let arrOfColors = ['#d7e0d4', '#a6bc9e', '#d1d1d1', '#eef2f2', '#8ad9d9', '#a5bca4']
 ////////////////////////////////// COLOR PICKER API //////////////////////////////////////
 var colorPicker = new iro.ColorPicker("#colorPicker", {
     width: 150,
@@ -120,14 +121,17 @@ generateRandomPattern()
 function generateRandomPattern() {
     clearCanvas()
     squares = []
-    for (let i = 0; i < 20000; i++) {
-        const square = new Square({ top: 0, left: 0, size: 10, color: generateRandomColor() })
+    //  size 1 for small (slow loading time) needs 1,000,000 pixels, 10 for med 16,000, and 20 for large 4,000
+    // need to find a way for squares to realize canvas end and stop 
+    for (let i = 0; i < 16000; i++) {
+        const square = new Square({ top: 0, left: 0, size: 10, color: generateRandomColor(i) })
         square.addToCanvas()
         squares.push(square)
     }
-    function generateRandomColor() {
-        let randomNumUpto4 = Math.floor(Math.random() * arrOfColors.length)
-        return arrOfColors[randomNumUpto4]
+    function generateRandomColor(i) {
+        let randomNum = Math.floor(Math.random() * arrOfColors.length)
+        // if (i % 3 === 0) return arrOfColors[0]
+        return arrOfColors[randomNum]
     }
 }
 
