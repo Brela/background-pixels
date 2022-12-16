@@ -13,8 +13,11 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Electrolize&family=Passion+One&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--script for color picker -->
     <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
 </head>
 
@@ -24,20 +27,39 @@
 
         <aside>
             <div class="generateButtonsContainer">
-                <div class="random button">Generate Random Pixels</div>
-                <div class="ordered button">Generate Ordered Pattern</div>
+                <div class="random button"><span class="hideGenerate">Generate&nbsp;</span>Random Pixels</div>
+                <div class="ordered button"><span class="hideGenerate">Generate&nbsp;</span>Ordered Pattern</div>
             </div>
             <div>
-                <h3 class="shapes">
-                    Shapes - coming soon
+                <h3 class="size">
+                    Choose a pixel size
                 </h3>
+                <div class="sizes">
+                    <div class="pixelSizePixels small selected">
+                        <div class="small"></div>
+                    </div>
+                    <div class="pixelSizePixels medium">
+                        <div class="medium"></div>
+                    </div>
+                    <div class="pixelSizePixels large">
+                        <div class="large"></div>
+                    </div>
+                </div>
+            </div>
 
+            <div>
+                <div id="colorPicker">
+
+                </div>
+                <div class="addColor button">
+                    Add Color
+                </div>
             </div>
             <div>
                 <h3 class="colorArray">
                     Color Array
                 </h3>
-                <div class="boxes">
+                <div class="colorArrayBoxes">
                     <div class="c1 box"></div>
                     <div class="c2 box"></div>
                     <div class="c3 box"></div>
@@ -48,14 +70,17 @@
                     <div class="c8 box"></div>
                 </div>
             </div>
-            <div>
-                <div id="colorPicker">
-
+            <!--             <div>
+                <h3>
+                    Saved Arrays
+                </h3>
+                <div class="savedArrays">
+                    <div class="s1"></div>
+                    <div class="s2"></div>
+                    <div class="s3"></div>
+                    <div class="s4"></div>
                 </div>
-                <div class="addColor button">
-                    Add To Color Array
-                </div>
-            </div>
+            </div> -->
             <div>
                 <h1>A colored pixel generator by Brela</h1>
             </div>
@@ -71,11 +96,12 @@
             </section>
         </aside>
 
-        <div class="canvas">
+        <div class="canvas MobileCanvas">
 
         </div>
     </section>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script src="https://kit.fontawesome.com/aff5f1d5dc.js" crossorigin="anonymous"></script>
 <script type="text/javascript" src="code.js"></script>
 

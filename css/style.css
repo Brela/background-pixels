@@ -12,19 +12,20 @@ aside {
     margin-top: 50px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-
+    justify-content: flex-start;
     align-items: center;
-    gap: 30px;
+    /* this provides spacing between sections */
+    gap: 40px;
 }
 
-aside>div {}
 
-div h1 {
-    font-size: 40px;
+h1 {
+    font-size: 1rem;
+    font-weight: 700;
 }
 
 h3, #colorPicker {
+    margin-bottom: 10px;
     font-size: 1em;
     font-weight: 500;
     display: flex;
@@ -39,6 +40,7 @@ h3, #colorPicker {
     gap: 30px;
 }
 
+/*-------------------SIZES FOR 'CHOOSE A SIZE'----------------------------*/
 .sizes {
     position: absolute;
     margin-left: 50px;
@@ -47,8 +49,6 @@ h3, #colorPicker {
     align-items: center;
     gap: 10px;
 }
-
-.pixelSizePixels {}
 
 .pixelSizePixels {
     box-sizing: border-box;
@@ -71,6 +71,7 @@ h3, #colorPicker {
     background-color: rgb(86, 232, 255);
 }
 
+/* -------------- SMALL MEDIUM LARGE ------------------ */
 .small {
     width: 8px;
     height: 8px;
@@ -78,24 +79,40 @@ h3, #colorPicker {
 }
 
 .medium {
-    width: 12px;
-    height: 12px;
+    width: 11px;
+    height: 11px;
 }
 
 .large {
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
 }
 
+/* ---------------- SAVED ARRAYS -------------------*/
+.savedArrays {
+    display: flex;
+
+    gap: 20px;
+}
+
+.savedArrays>div {
+    width: 30px;
+    height: 30px;
+    border: .5px solid rgba(128, 128, 128, 0.561);
+    background-color: white;
+}
+
+/* ---------------- THE COLOR ARRAY -------------------*/
 .colorArrayBoxes {
     display: flex;
-    border: 1px solid grey;
+    /* border: .2px solid grey; */
 }
+
 
 .colorArrayBoxes>div {
     width: 30px;
     height: 30px;
-    border: .5px solid rgba(128, 128, 128, 0.561);
+    border: .1px solid rgba(128, 128, 128, 0.561);
     background-color: white;
 }
 
@@ -125,7 +142,7 @@ h3, #colorPicker {
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
-    width: 70vw;
+    width: 70.3vw;
     height: 90vh;
     overflow: hidden;
     background-color: rgb(171, 171, 171);
