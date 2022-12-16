@@ -15,17 +15,22 @@ $(document).ready(function () {
         color: arrOfColors[0],
         borderWidth: 1,
         borderColor: "#fff",
+        margin: 20,
+        handleRadius: 7,
+        layoutDirection: "horizontal",
+        // wheelDirection: "anticlockwise",
         layout: [
-            {
-                component: iro.ui.Box,
-            },
             {
                 component: iro.ui.Slider,
                 options: {
                     id: 'hue-slider',
                     sliderType: 'hue'
                 }
+            },
+            {
+                component: iro.ui.Box,
             }
+
         ]
     });
 
@@ -78,6 +83,20 @@ $(document).ready(function () {
         }
 
     }
+
+    // ----------SHOW/ HIDE X over color array color when hovered over to signal 'remove color'---------
+    boxes.forEach((box, i) => {
+        box.addEventListener('mouseenter', showXoverBox)
+        box.addEventListener('mouseleave', hideXoverBox)
+        function showXoverBox() {
+            box.classList.add("overlayX")
+        }
+        function hideXoverBox() {
+            box.classList.remove("overlayX")
+
+        }
+    })
+
 
     // ----------------- ADD COLOR TO ARRAY on click---------------------------------------
     // when "add to color array" button is clicked, the color from the color picker is added to arrOfColors
@@ -143,6 +162,7 @@ $(document).ready(function () {
 
     let squares = []
 
+
     // generateRandomPattern() is called here to happen on page load
     generateRandomPattern()
 
@@ -200,7 +220,6 @@ $(document).ready(function () {
         let canvas = document.querySelector('.canvas')
         canvas.replaceChildren()
     }
-
 
 
 

@@ -46,13 +46,16 @@
                     </div>
                 </div>
             </div>
+            <div class="colorPickerContainer">
+                <h3>Add Color</h3>
+                <div class="colorPickerSubContainer">
+                    <div id="colorPicker">
 
-            <div>
-                <div id="colorPicker">
+                    </div>
+                    <div class="addColorContainer">
+                        <div class="addColor">+</div>
 
-                </div>
-                <div class="addColor button">
-                    Add Color
+                    </div>
                 </div>
             </div>
             <div>
@@ -81,10 +84,11 @@
                     <div class="s4"></div>
                 </div>
             </div> -->
-            <div>
+            <!-- --------------social links for desktop below, hidden on mobile  ------------------ -->
+            <div id="desktop">
                 <h1>A colored pixel generator by Brela</h1>
             </div>
-            <section class="socials">
+            <section class="socials" id="desktop">
                 <div><a href="https://www.linkedin.com/in/clayton-breland" target="_blank" rel=”noreferrer”><i
                             class="fa-brands fa-linkedin"></i></a>
                 </div>
@@ -96,9 +100,24 @@
             </section>
         </aside>
 
-        <div class="canvas MobileCanvas">
+        <!-- ---------- the canvas ------------ -->
+        <div class="canvas">
 
         </div>
+        <!-- --------------social links for mobile below, hidden on desktop ------------------ -->
+        <div id="mobile">
+            <h1>A colored pixel generator by Brela</h1>
+        </div>
+        <section class="socials" id="mobile">
+            <div><a href="https://www.linkedin.com/in/clayton-breland" target="_blank" rel=”noreferrer”><i
+                        class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <div><a href="https://github.com/Brela" target="_blank" rel=”noreferrer”><i
+                        class="fa-brands fa-square-github"></i></a>
+            </div>
+            <div><a href="https://twitter.com/ClayBreland" target="_blank" rel=”noreferrer”><i
+                        class=" fa-brands fa-square-twitter"></i></a></div>
+        </section>
     </section>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
