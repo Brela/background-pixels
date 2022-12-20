@@ -174,7 +174,9 @@ $(document).ready(function () {
 
 
     // generateRandomPattern() is called here to happen on page load
-    generateRandomPattern()
+    // the setTimeout with a delay of 0ms allows the DOM's layout to load before generating these pixels
+    setTimeout(generateRandomPattern, 0)
+
 
     function generateRandomPattern() {
         clearCanvas()
@@ -195,7 +197,7 @@ $(document).ready(function () {
     // ================================== below is for ordered patterns ===========================================
 
     // Each array item decalres how many times the color from 'arrOfColors will be printed in the orderred pattern
-    let timesEachColorPrints = [40, 4, 2, 2, 2, 2, 4, 2]
+    let timesEachColorPrints = [4, 4, 2, 2, 2, 2, 4, 2]
     // modifying timesEachColorPrints to match the length of the arrOfColors
     timesEachColorPrints = timesEachColorPrints.slice(0, arrOfColors.length)
     // This array position is used to check which color is being printed from 'arrOfColors' and the amount of times it need to be printed from 'timesEachColorPrints
