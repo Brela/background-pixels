@@ -42,21 +42,24 @@ h3, #colorPicker {
     gap: 30px;
 }
 
-/*-------------------SIZES FOR 'CHOOSE A SIZE'----------------------------*/
+/*-------------------SIZES FOR 'PIXEL SIZE'----------------------------*/
+.generatePixelsAndPixelSizeContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .sizes {
     position: absolute;
-    margin-left: 50px;
+    margin-left: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
 }
 
-.pixelSizePixels {
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.sizeButton {
+
     background-color: white;
     border: .5px solid grey;
     position: relative;
@@ -64,8 +67,15 @@ h3, #colorPicker {
     left: 0;
     width: 20px;
     height: 20px;
-
     border-radius: 3px;
+}
+
+.threeSizeBoxes {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
 .selected {
@@ -242,19 +252,221 @@ section.socials {
         display: flex;
     }
 
-
+    /* hides the word "generate" on 2 top buttons*/
     .hideGenerate {
         display: none;
     }
 
     * {
-        font-size: 12px
+        font-size: 8px
+    }
+
+    body {
+        background-color: #ffffff;
+    }
+
+    body>section {
+        display: flex;
+        flex-direction: column;
+        gap: 4vw;
+        margin-left: 4vw;
+    }
+
+    aside {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        /* this provides spacing between sections */
+        gap: 40px;
+    }
+
+
+    h1 {
+        font-size: 1rem;
+        font-weight: 700;
+    }
+
+    h3, #colorPicker {
+        margin-bottom: 10px;
+        font-size: .8rem;
+        font-weight: 500;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+
+    .generateButtonsContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .random, .ordered {
+        font-size: 9px;
+        padding: 2;
+    }
+
+    /* ---------------- BUTTONS -------------------*/
+    .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        min-width: 40px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 8px;
+        padding: 0 7px;
+        border: 1px solid grey;
+        cursor: pointer;
+    }
+
+    .button:hover {
+        background-color: rgb(237, 237, 237);
+    }
+
+    /*-------------------SIZES FOR 'CHOOSE A SIZE'----------------------------*/
+    .sizes {
+        position: absolute;
+        margin-left: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .sizeButton {
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+
+    /* ---------------- SAVED ARRAYS -------------------*/
+    .savedArrays {
+        display: flex;
+        gap: 20px;
+    }
+
+    .savedArrays>div {
+        width: 30px;
+        height: 30px;
+        border: .5px solid rgba(128, 128, 128, 0.561);
+        background-color: white;
+    }
+
+    /* ---------------- THE COLOR ARRAY/ BOXES -------------------*/
+    .colorArrayBoxes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        /* border: .2px solid grey; */
+        height: 130px;
+        flex-wrap: wrap;
+    }
+
+
+    .colorArrayBoxes>div {
+        width: 30px;
+        height: 30px;
+        border: .1px solid rgba(128, 128, 128, 0.561);
+        background-color: white;
+        position: relative;
+    }
+
+    /* this class is added with JS when useer hovers over color/ box  in the color array*/
+    .overlayX:after {
+        display: block;
+        color: rgb(110, 110, 110);
+        text-align: center;
+        font-size: 1.3em;
+        content: "x";
+        z-index: 10;
+        position: absolute;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+
     }
 
 
 
-    body {
-        background-color: #f0efef;
+    /* ---------------- COLOR PICKER/ ADD COLOR-------------------*/
+    .colorPickerContainer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .colorPickerSubContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        align-items: flex-end;
+        margin-right: 35px;
+    }
+
+
+    .addColor {
+        color: green;
+        font-size: 30px;
+        font-weight: 900;
+        width: 100px;
+        height: 30px;
+        border: .5px solid grey;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid grey;
+        cursor: pointer;
+        background-color: rgb(255, 255, 255);
+        border-radius: 8px;
+    }
+
+
+
+    /* ---------------- CANVAS -------------------*/
+    .canvas {
+        margin-top: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        width: 90vw;
+        height: 50vh;
+        overflow: hidden;
+        background-color: rgb(171, 171, 171);
+    }
+
+
+
+    /* ------------------ SOCIALS ------------- */
+
+    section.socials {
+        display: flex;
+        gap: 50px;
+        width: 50%;
+        height: 40px;
+    }
+
+    .socials div {
+        width: 15%
+    }
+
+    .socials div i {
+        color: rgb(128, 86, 86);
+        font-size: 1.5rem;
+
+    }
+
+    .socials div i:hover {
+        color: rgb(147, 149, 122);
+        font-size: 1.5rem;
     }
 
 }

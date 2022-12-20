@@ -15,7 +15,7 @@ $(document).ready(function () {
         color: arrOfColors[0],
         borderWidth: 1,
         borderColor: "#fff",
-        margin: 20,
+        margin: mobile ? 35 : 10,
         handleRadius: 7,
         layoutDirection: "horizontal",
         // wheelDirection: "anticlockwise",
@@ -131,29 +131,39 @@ $(document).ready(function () {
     document.querySelector('.random').addEventListener('click', generateRandomPattern)
     document.querySelector('.ordered').addEventListener('click', generateOrderedPattern)
 
-    // sizes 8-small, 10-med, 20-larg
+    let canvas = document.querySelector('.canvas')
+    /*   canvas.style.width = window.innerWidth
+      console.log(window.innerWidth) */
+    let canvasWidth = canvas.offsetWidth
+    let canvasHeight = canvas.offsetHeight
+    let canvasDimensions = (size) => {
+        return (canvasWidth / size) * (canvasHeight / size)
+    }
+
+    // sizes 8-small, 10-med, 16-larg
     let size = 8
-    let numOfPixels = 25000
-    let sizeButton = document.querySelectorAll('.pixelSizePixels')
+    let numOfPixels = canvasDimensions(size)
+    console.log(`Num of Pixels: ${numOfPixels}`)
+
+    let sizeButton = document.querySelectorAll('.sizeButton')
     sizeButton.forEach((el, i) => el.addEventListener('click', () => changeSize(el, i)))
     function changeSize(el, i) {
         //clear prev selected
-        sizeButton.forEach(ella => ella.classList.remove('selected'))
+        sizeButton.forEach(box => box.classList.remove('selected'))
         //select new
-        console.log(el)
         el.classList.toggle('selected')
         // change size with if statements
         if (i === 0) {
             size = 8
-            numOfPixels = 25000
+            numOfPixels = canvasDimensions(size)
         }
         if (i === 1) {
             size = 10
-            numOfPixels = 15000
+            numOfPixels = canvasDimensions(size)
         }
         if (i === 2) {
             size = 16
-            numOfPixels = 7000
+            numOfPixels = canvasDimensions(size)
         }
     }
     // squares is an array of every colored square; these colored squares are generated with 
@@ -217,10 +227,8 @@ $(document).ready(function () {
         }
     }
     function clearCanvas() {
-        let canvas = document.querySelector('.canvas')
         canvas.replaceChildren()
     }
-
 
 
     /* not used yet, could be used for loading pixels slowly  */
