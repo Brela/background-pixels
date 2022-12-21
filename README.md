@@ -8,7 +8,7 @@ HTML, CSS, JavaScript, and a <a href="https://iro.js.org/" target="_blank">color
 ## users can
 ✔️ change pixel size
 ✔️ change the colors in the canvas
-✔️ creat either a canvas of random pixel or a pattern of differnt colors
+✔️ create either a canvas of random pixel or a pattern of differnt colors
 
 ## highlights of completed tasks
 * made mobile friendly
