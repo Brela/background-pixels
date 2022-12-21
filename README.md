@@ -3,7 +3,7 @@ A website for creating an image with colored "pixels" - could be used for websit
 ## Live Site: <a href="https://background-pixels.netlify.app/" target="_blank">__background-pixels.netlify.app/__</a>
 
 ### tech used
-HTML, CSS, JavaScript, <a href="https://iro.js.org/" target="_blank">__color picker API__</a> 
+HTML, CSS, JavaScript, and a <a href="https://iro.js.org/" target="_blank">color picker API</a> 
 
 ## users can
 ✔️ change pixel size
