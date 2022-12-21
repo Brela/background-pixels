@@ -16,4 +16,4 @@ HTML, CSS, JavaScript, and a <a href="https://iro.js.org/" target="_blank">color
 ### ToDo:
 * make canvas exactly (x) pixels wide and tall so that there is no extra space/ no cutoff pixels on edges
 * Add option to favorite a color array and save it to the user's local storage
-* Add feature to download the canvas as an image. Maybe use http://html2canvas.hertzen.com/features for this? Uses Node.js (which is coming up soon in class 33)
+* Add feature to download the canvas as an image. Maybe use http://html2canvas.hertzen.com/features for this? Uses Node.js
