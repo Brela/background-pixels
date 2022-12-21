@@ -3,6 +3,13 @@ body {
 }
 
 
+/* sprited images with directions for user on how to operate*/
+.directionsRemoveBox, .directionsAddColor, .directionsClickToRefresh {}
+
+.directionsRemoveBoxMobile, .directionsAddColorMobile, .directionsClickToRefreshMobile {
+    display: none;
+}
+
 body>section {
     display: flex;
     gap: 4vw;
@@ -161,7 +168,7 @@ h3, #colorPicker {
     margin-right: 35px;
 }
 
-
+/* add color button */
 .addColor {
     color: green;
     font-size: 30px;
@@ -243,6 +250,8 @@ section.socials {
     font-size: 1.8rem;
 }
 
+/*=======================================================================================================*/
+/*========================================= media queries =====================================================*/
 @media screen and (max-width: 1000px) {
     #desktop {
         display: none;
@@ -268,18 +277,18 @@ section.socials {
     body>section {
         display: flex;
         flex-direction: column;
-        gap: 4vw;
+        gap: 10px;
         margin-left: 4vw;
     }
 
     aside {
-        margin-top: 50px;
+        margin-top: 30px;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
         align-items: flex-start;
         /* this provides spacing between sections */
-        gap: 40px;
+        gap: 15px;
     }
 
 
@@ -305,6 +314,12 @@ section.socials {
         gap: 10px;
     }
 
+    .generatePixelsAndPixelSizeContainer {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+
     .random, .ordered {
         font-size: 9px;
         padding: 2;
@@ -320,7 +335,7 @@ section.socials {
         background-color: rgb(255, 255, 255);
         border-radius: 8px;
         padding: 0 7px;
-        border: 1px solid grey;
+        border: 1px solid rgb(167, 167, 167);
         cursor: pointer;
     }
 
@@ -386,7 +401,7 @@ section.socials {
         color: rgb(110, 110, 110);
         text-align: center;
         font-size: 1.3em;
-        content: "x";
+        content: "";
         z-index: 10;
         position: absolute;
         height: 100%;
@@ -406,19 +421,20 @@ section.socials {
 
     .colorPickerSubContainer {
         display: flex;
-        flex-direction: column;
-        gap: 5px;
-        align-items: flex-end;
-        margin-right: 35px;
+        flex-direction: row;
+        gap: 12px;
+        align-items: center;
+        margin-right: 0px;
     }
 
-
+    /* add color button*/
     .addColor {
         color: green;
         font-size: 30px;
         font-weight: 900;
-        width: 100px;
-        height: 30px;
+        width: 25px;
+        margin-top: 20px;
+        height: 95px;
         border: .5px solid grey;
         display: flex;
         align-items: center;

@@ -11,13 +11,13 @@ $(document).ready(function () {
     let arrOfColors = ['#d7e0d4', '#a6bc9e', '#d1d1d1', '#eef2f2', '#8ad9d9', '#a5bca4']
     ////////////////////////////////// COLOR PICKER API //////////////////////////////////////
     var colorPicker = new iro.ColorPicker("#colorPicker", {
-        width: mobile ? 110 : 150,    // media query to make colorPicker smaller on mobile
+        width: mobile ? 90 : 150,    // media query to make colorPicker smaller on mobile
         color: arrOfColors[0],
         borderWidth: 1,
         borderColor: "#fff",
-        margin: mobile ? 35 : 10,
+        margin: mobile ? 10 : 10,
         handleRadius: 7,
-        layoutDirection: "horizontal",
+        layoutDirection: mobile ? "vertical" : "horizontal",
         // wheelDirection: "anticlockwise",
         layout: [
             {
