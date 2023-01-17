@@ -8,12 +8,13 @@ HTML, CSS, JavaScript, and a <a href="https://iro.js.org/" target="_blank">color
 ## users can
 ✔️ change pixel size
 ✔️ change the colors in the canvas
-✔️ create either a canvas of random pixel or a pattern of differnt colors
+✔️ create either a canvas of random pixels or a pattern of differnt colors
 
 ## highlights of completed tasks
 * made mobile friendly
 * changed the pixel generation code from being hard-coded to being changed based on canvas size. Now, the exact amount of pixels needed is created based on the canvas size - no extra pixels/ extra javascript need to be ran
+* made canvas exactly (x) pixels wide and tall (based on calculated dimensions) so that there is no extra space/ no cutoff pixels on edges
 ### ToDo:
-* make canvas exactly (x) pixels wide and tall so that there is no extra space/ no cutoff pixels on edges
+* Add info button that describes how to use it to new users
 * Add option to favorite a color array and save it to the user's local storage
 * Add feature to download the canvas as an image. Maybe use http://html2canvas.hertzen.com/features for this? Uses Node.js
