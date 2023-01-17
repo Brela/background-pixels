@@ -136,6 +136,7 @@ $(document).ready(function () {
       console.log(window.innerWidth) */
     let canvasWidth = canvas.offsetWidth
     let canvasHeight = canvas.offsetHeight
+
     let canvasDimensions = (size) => {
         return (canvasWidth / size) * (canvasHeight / size)
     }
@@ -145,7 +146,9 @@ $(document).ready(function () {
     let numOfPixels = canvasDimensions(size)
     console.log(`Num of Pixels: ${numOfPixels}`)
 
+    // create an array of the 3 size buttons on page
     let sizeButton = document.querySelectorAll('.sizeButton')
+    // set the size based on which button was clicked (small, med, or large)
     sizeButton.forEach((el, i) => el.addEventListener('click', () => changeSize(el, i)))
     function changeSize(el, i) {
         //clear prev selected
@@ -155,15 +158,12 @@ $(document).ready(function () {
         // change size with if statements
         if (i === 0) {
             size = 8
-            numOfPixels = canvasDimensions(size)
         }
         if (i === 1) {
             size = 10
-            numOfPixels = canvasDimensions(size)
         }
         if (i === 2) {
             size = 16
-            numOfPixels = canvasDimensions(size)
         }
     }
     // squares is an array of every colored square; these colored squares are generated with 
