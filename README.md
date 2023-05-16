@@ -5,7 +5,6 @@ A website for creating an image with colored "pixels" - could be used for websit
   <section align="left">
 <a href="" target="_blank" rel="noreferrer">
 <img src="https://i.ibb.co/g3qjF2b/background-pixels.png" alt="background-pixels screenshot" width="620" height="400"/>
-  <a href="https://ibb.co/nbdg8Gq"><img src="" alt="" border="0"></a>
 </a>
 </section>
   <br>
