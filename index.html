@@ -1,81 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pattern Generator</title>
 
     <!--fonts imported-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Electrolize&family=Passion+One&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/reset.css">
+      href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Electrolize&family=Passion+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/reset.css" />
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
 
     <!--script for color picker -->
     <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <section>
-
-        <aside>
-            <div class="generatePixelsAndPixelSizeContainer">
-                <div class="generateButtonsContainer">
-                    <div class="random button"><span class="hideGenerate">Generate&nbsp;</span>Random Pixels</div>
-                    <div class="ordered button"><span class="hideGenerate">Generate&nbsp;</span>Ordered Pattern</div>
-                </div>
-                <div class="sizeContainer">
-                    <h3 class="size">
-                        Pixel Size
-                    </h3>
-                    <div class="threeSizeBoxes">
-                        <div class="sizeButton small selected">
-                            <div title="Change Pixel Size" class="small"></div>
-                        </div>
-                        <div class="sizeButton medium">
-                            <div title="Change Pixel Size" class="medium"></div>
-                        </div>
-                        <div class="sizeButton large">
-                            <div title="Change Pixel Size" class="large"></div>
-                        </div>
-                    </div>
-                </div>
+      <aside>
+        <div class="generatePixelsAndPixelSizeContainer">
+          <div class="generateButtonsContainer">
+            <div class="random button">
+              <span class="hideGenerate">Generate&nbsp;</span>Random Pixels
             </div>
-            <div class="colorPickerContainer">
-                <h3>Add Color</h3>
-                <div class="colorPickerSubContainer">
-                    <div id="colorPicker">
-
-                    </div>
-                    <div class="addColorContainer">
-                        <div title="Add Color to Color Array" class="addColor">+</div>
-
-                    </div>
-                </div>
+            <div class="ordered button">
+              <span class="hideGenerate">Generate&nbsp;</span>Ordered Pattern
             </div>
-            <div>
-                <h3 class="colorArray">
-                    Color Array
-                </h3>
-                <div class="colorArrayBoxes">
-                    <div title="Remove Color" class="c1 box"></div>
-                    <div title="Remove Color" class="c2 box"></div>
-                    <div title="Remove Color" class="c3 box"></div>
-                    <div title="Remove Color" class="c4 box"></div>
-                    <div title="Remove Color" class="c5 box"></div>
-                    <div title="Remove Color" class="c6 box"></div>
-                    <div title="Remove Color" class="c7 box"></div>
-                    <div title="Remove Color" class="c8 box"></div>
-                </div>
+          </div>
+          <div class="sizeContainer">
+            <h3 class="size">Pixel Size</h3>
+            <div class="threeSizeBoxes">
+              <div class="sizeButton small selected">
+                <div title="Change Pixel Size" class="small"></div>
+              </div>
+              <div class="sizeButton medium">
+                <div title="Change Pixel Size" class="medium"></div>
+              </div>
+              <div class="sizeButton large">
+                <div title="Change Pixel Size" class="large"></div>
+              </div>
             </div>
-            <!--             <div>
+          </div>
+        </div>
+        <div class="colorPickerContainer">
+          <h3>Add Color</h3>
+          <div class="colorPickerSubContainer">
+            <div id="colorPicker"></div>
+            <div class="addColorContainer">
+              <div title="Add Color to Color Array" class="addColor">+</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="colorArray">Color Array</h3>
+          <div class="colorArrayBoxes">
+            <div title="Remove Color" class="c1 box"></div>
+            <div title="Remove Color" class="c2 box"></div>
+            <div title="Remove Color" class="c3 box"></div>
+            <div title="Remove Color" class="c4 box"></div>
+            <div title="Remove Color" class="c5 box"></div>
+            <div title="Remove Color" class="c6 box"></div>
+            <div title="Remove Color" class="c7 box"></div>
+            <div title="Remove Color" class="c8 box"></div>
+          </div>
+        </div>
+        <!--             <div>
                 <h3>
                     Saved Arrays
                 </h3>
@@ -86,52 +81,73 @@
                     <div class="s4"></div>
                 </div>
             </div> -->
-            <!-- --------------social links for desktop below, hidden on mobile  ------------------ -->
-            <div id="desktop">
-                <h1>A colored pixel generator by Brela</h1>
-            </div>
-            <section class="socials" id="desktop">
-                <div><a href="https://www.linkedin.com/in/clayton-breland" target="_blank" rel=”noreferrer”><i
-                            class="fa-brands fa-linkedin"></i></a>
-                </div>
-                <div><a href="https://github.com/Brela" target="_blank" rel=”noreferrer”><i
-                            class="fa-brands fa-square-github"></i></a>
-                </div>
-                <div><a href="https://twitter.com/ClayBreland" target="_blank" rel=”noreferrer”><i
-                            class=" fa-brands fa-square-twitter"></i></a></div>
-            </section>
-        </aside>
-        <!-- these divs below are for the instructions that appear when a user first visits site -->
-        <div>
-            <div class="directionsRemoveBox"></div>
-            <div class="directionsAddColor"></div>
-            <div class="directionsClickToRefresh"></div>
-            <div class="directionsRemoveBoxMobile"></div>
-            <div class="directionsAddColorMobile"></div>
-            <div class="directionsClickToRefreshMobile"></div>
+        <!-- --------------social links for desktop below, hidden on mobile  ------------------ -->
+        <div id="desktop">
+          <h1>A colored pixel generator by Brela</h1>
         </div>
-        <!-- ---------- the canvas ------------ -->
-        <div class="canvas">
-
-        </div>
-        <!-- --------------social links for mobile below, hidden on desktop ------------------ -->
-        <div id="mobile">
-            <h1>A colored pixel generator by Brela</h1>
-        </div>
-        <section class="socials" id="mobile">
-            <div><a href="https://www.linkedin.com/in/clayton-breland" target="_blank" rel=”noreferrer”><i
-                        class="fa-brands fa-linkedin"></i></a>
-            </div>
-            <div><a href="https://github.com/Brela" target="_blank" rel=”noreferrer”><i
-                        class="fa-brands fa-square-github"></i></a>
-            </div>
-            <div><a href="https://twitter.com/ClayBreland" target="_blank" rel=”noreferrer”><i
-                        class=" fa-brands fa-square-twitter"></i></a></div>
+        <section class="socials" id="desktop">
+          <div>
+            <a
+              href="https://www.linkedin.com/in/clayton-breland"
+              target="_blank"
+              rel="”noreferrer”"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+          </div>
+          <div>
+            <a
+              href="https://github.com/Brela"
+              target="_blank"
+              rel="”noreferrer”"
+              ><i class="fa-brands fa-square-github"></i
+            ></a>
+          </div>
+          <div>
+            <a
+              href="https://twitter.com/ClayBreland"
+              target="_blank"
+              rel="”noreferrer”"
+              ><i class="fa-brands fa-square-twitter"></i
+            ></a>
+          </div>
         </section>
+      </aside>
+      <!-- these divs below are for the instructions that appear when a user first visits site -->
+      <div>
+        <div class="directionsRemoveBox"></div>
+        <div class="directionsAddColor"></div>
+        <div class="directionsClickToRefresh"></div>
+        <div class="directionsRemoveBoxMobile"></div>
+        <div class="directionsAddColorMobile"></div>
+        <div class="directionsClickToRefreshMobile"></div>
+      </div>
+      <!-- ---------- the canvas ------------ -->
+      <div class="canvas"></div>
+      <!-- --------------social links for mobile below, hidden on desktop ------------------ -->
+      <div id="mobile">
+        <h1>A colored pixel generator by Brela</h1>
+      </div>
+      <section class="socials" id="mobile">
+        <div>
+          <a
+            href="https://www.linkedin.com/in/clayton-breland"
+            target="_blank"
+            rel="”noreferrer”"
+            ><i class="fa-brands fa-linkedin"></i
+          ></a>
+        </div>
+        <div>
+          <a href="https://github.com/Brela" target="_blank" rel="”noreferrer”"
+            ><i class="fa-brands fa-square-github"></i
+          ></a>
+        </div>
+      </section>
     </section>
-</body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<script src="https://kit.fontawesome.com/aff5f1d5dc.js" crossorigin="anonymous"></script>
-<script type="text/javascript" src="code.js"></script>
-
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script
+    src="https://kit.fontawesome.com/aff5f1d5dc.js"
+    crossorigin="anonymous"
+  ></script>
+  <script type="text/javascript" src="code.js"></script>
 </html>
